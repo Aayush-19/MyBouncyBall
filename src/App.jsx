@@ -69,7 +69,7 @@ function App() {
                 overflow:"hidden",
                 width : BOX_WIDTH,
                 height: BOX_HEIGHT,
-                backgroundImage: "url(src/assets/bgImg.jpg)",
+                backgroundImage: "url(https://github.com/Aayush-19/MyBouncyBall/blob/main/src/assets/bgImg.jpg)",
                 position:"relative"
               }}
         > 
@@ -82,7 +82,7 @@ function App() {
                   top:"0px",
                 }}
           >
-            <img src="src/assets/top.png" 
+            <img src="https://github.com/Aayush-19/MyBouncyBall/blob/main/src/assets/top.png" 
                   width={OBSTACLE_WIDTH}
                   height={obstacleHeight}/>
           </div>
@@ -108,7 +108,7 @@ function App() {
                 }}
           >
 
-          <img src="src/assets/bottom.png" 
+          <img src="https://github.com/Aayush-19/MyBouncyBall/blob/main/src/assets/bottom.png" 
                   width={OBSTACLE_WIDTH}
                   height={OBSTACLE_BOTTOM_HEIGHT}/>
           </div>
