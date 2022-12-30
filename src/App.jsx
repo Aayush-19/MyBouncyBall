@@ -69,7 +69,8 @@ function App() {
                 overflow:"hidden",
                 width : BOX_WIDTH,
                 height: BOX_HEIGHT,
-                backgroundImage: "url(https://github.com/Aayush-19/MyBouncyBall/blob/main/src/assets/bgImg.jpg)",
+                // backgroundColor:"blue",
+                backgroundImage: "url(https://raw.githubusercontent.com/Aayush-19/MyBouncyBall/main/src/assets/bgImg.jpg)",
                 position:"relative"
               }}
         > 
@@ -79,10 +80,11 @@ function App() {
                   height:obstacleHeight,
                   width:OBSTACLE_WIDTH,
                   left:obstaclePositionLeft,
+                  // backgroundColor:"green",
                   top:"0px",
                 }}
           >
-            <img src="https://github.com/Aayush-19/MyBouncyBall/blob/main/src/assets/top.png" 
+            <img src="https://raw.github.com/Aayush-19/MyBouncyBall/main/src/assets/top.png" 
                   width={OBSTACLE_WIDTH}
                   height={obstacleHeight}/>
           </div>
@@ -105,10 +107,11 @@ function App() {
                   height:OBSTACLE_BOTTOM_HEIGHT,
                   left:obstaclePositionLeft,
                   top:obstacleHeight+GAME_DIFFICULTY,
+                  // backgroundColor:"green",
                 }}
           >
 
-          <img src="https://github.com/Aayush-19/MyBouncyBall/blob/main/src/assets/bottom.png" 
+          <img src="https://raw.github.com/Aayush-19/MyBouncyBall/main/src/assets/bottom.png" 
                   width={OBSTACLE_WIDTH}
                   height={OBSTACLE_BOTTOM_HEIGHT}/>
           </div>
