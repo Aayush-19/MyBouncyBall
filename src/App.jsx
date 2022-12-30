@@ -69,8 +69,7 @@ function App() {
                 overflow:"hidden",
                 width : BOX_WIDTH,
                 height: BOX_HEIGHT,
-                // backgroundImage: "url(src/assets/bgImg.jpg)",
-                backgroundColor:"blue",
+                backgroundImage: "url(src/assets/bgImg.jpg)",
                 position:"relative"
               }}
         > 
@@ -81,12 +80,11 @@ function App() {
                   width:OBSTACLE_WIDTH,
                   left:obstaclePositionLeft,
                   top:"0px",
-                  backgroundColor:"green"
                 }}
           >
-            {/* <img src="src/assets/top.png" 
+            <img src="src/assets/top.png" 
                   width={OBSTACLE_WIDTH}
-                  height={obstacleHeight}/> */}
+                  height={obstacleHeight}/>
           </div>
           <div className='ball' style= {{
             position:"absolute",
@@ -107,13 +105,12 @@ function App() {
                   height:OBSTACLE_BOTTOM_HEIGHT,
                   left:obstaclePositionLeft,
                   top:obstacleHeight+GAME_DIFFICULTY,
-                  backgroundColor:"green"
                 }}
           >
 
-          {/* <img src="src/assets/bottom.png" 
+          <img src="src/assets/bottom.png" 
                   width={OBSTACLE_WIDTH}
-                  height={OBSTACLE_BOTTOM_HEIGHT}/> */}
+                  height={OBSTACLE_BOTTOM_HEIGHT}/>
           </div>
         </div>
 
