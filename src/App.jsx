@@ -119,7 +119,7 @@ function App() {
 
           <button style={{
             marginTop:"50px",
-            marginRight:"50px",
+            // marginRight:"50px",
             "backgroundColor": "red"
         }} 
             onClick={()=>
@@ -154,7 +154,7 @@ function App() {
           </button>
 
           <button style={{
-             marginLeft:"50px",
+             marginLeft:"30px",
             "backgroundColor": "red"
             }
           } 
