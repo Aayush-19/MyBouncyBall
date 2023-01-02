@@ -13,11 +13,11 @@ function App() {
   const [obstaclePositionLeft,setobstaclePositionLeft] = useState(BOX_WIDTH-OBSTACLE_WIDTH);
   const [obstacleHeight,setobstacleHeight] = useState(100);
   const [score,setscore] = useState(0);
-
+  const[pause,setPause] = useState(false);
   
   useEffect(()=> {
     let interval=null
-    if(startGame){ 
+    if(startGame && !pause){ 
       interval = setInterval(() =>{ 
         if(ballPositionTop < BOX_HEIGHT-BALL_SIZE){
           setballPositionTop(ballPositionTop => ballPositionTop+3)      
@@ -55,7 +55,7 @@ function App() {
         <div className='GameBox' 
              onClick={()=>
                 {
-                  if(startGame){
+                  if(startGame && !pause){
                     if(ballPositionTop-50>=BALL_SIZE){
                       setballPositionTop(ballPositionTop => ballPositionTop-50);
                     }
@@ -123,11 +123,36 @@ function App() {
             "backgroundColor": "red"
         }} 
             onClick={()=>
-            { setstartGame(true)}
+            { 
+              if(pause==true){
+                setPause(setPause=>false);
+                setstartGame(true)
+              }
+              else if(startGame==false) {
+                setstartGame(true)
+                setscore(0);
+              }
+            }
           }>
             Start Game
           </button>
           
+          <button style={{
+             marginLeft:"30px",
+            "backgroundColor": "red"
+            }
+          } 
+          onClick={()=>{
+                if(pause==false){
+                  setstartGame(false)
+                  setPause(true)
+                }
+              }
+          }
+          >
+            Pause Game
+          </button>
+
           <button style={{
              marginLeft:"50px",
             "backgroundColor": "red"
@@ -143,7 +168,7 @@ function App() {
           }>
             Restart Game
           </button>
-
+          
           <h1> Score {score}</h1>
     </div>
   )
