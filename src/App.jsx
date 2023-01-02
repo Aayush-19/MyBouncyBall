@@ -13,8 +13,9 @@ function App() {
   const [obstaclePositionLeft,setobstaclePositionLeft] = useState(BOX_WIDTH-OBSTACLE_WIDTH);
   const [obstacleHeight,setobstacleHeight] = useState(100);
   const [score,setscore] = useState(0);
-  const[pause,setPause] = useState(false);
-  
+  const [pause,setPause] = useState(false);
+  const [bestscore, setbestscore] = useState(0)
+
   useEffect(()=> {
     let interval=null
     if(startGame && !pause){ 
@@ -41,7 +42,8 @@ function App() {
             setstartGame(startGame=>false);  
             setballPositionTop(ballPositionTop=> BOX_HEIGHT/2-BALL_SIZE/2);
             setobstaclePositionLeft(obstaclePositionLeft=>BOX_WIDTH-OBSTACLE_WIDTH)
-            setobstacleHeight(obstacleHeight=> 100)    
+            setobstacleHeight(obstacleHeight=> 100)  
+            setbestscore(Math.max(bestscore,score))  
         }
       },30)
       return ()=> clearInterval(interval);
@@ -162,14 +164,18 @@ function App() {
                 setstartGame(false)
                 setballPositionTop(ballPositionTop=> BOX_HEIGHT/2-BALL_SIZE/2);
                 setobstaclePositionLeft(obstaclePositionLeft=>BOX_WIDTH-OBSTACLE_WIDTH)
-                setobstacleHeight(obstacleHeight=> 100)    
+                setobstacleHeight(obstacleHeight=> 100) 
+                setbestscore(Math.max(bestscore,score))  
                 setscore(score=>0);  
           }
           }>
             Restart Game
           </button>
-          
-          <h1> Score {score}</h1>
+          <h3>Score &nbsp; {score} &emsp; &emsp;
+              <img src='https://raw.githubusercontent.com/Aayush-19/MyBouncyBall/main/src/assets/topScore.png'
+                  width="20px"
+                  height="30px"/> &nbsp; {bestscore}
+          </h3>
     </div>
   )
 }
